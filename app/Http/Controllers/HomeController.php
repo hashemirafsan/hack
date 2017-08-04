@@ -29,7 +29,7 @@ class HomeController extends Controller
         $userLocation = User::with('location')->find($id);
         $touristPlace = User::with('touristPlaces')->find($id);
 
-        return $touristPlace;
+        //return $touristPlace;
 
         return $userLocation;
 
