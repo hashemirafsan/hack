@@ -84,6 +84,7 @@
         <div class="col-sm-6">
              <div class="map-section">
                 <ul class="nav nav-pills">
+                <h1>Hello a</h1>
                     <li class="active"><a data-toggle="tab" href="#map-view">Map</a></li>
                     <li><a data-toggle="tab" href="#road-view">Steet View</a></li>
                     <li><a data-toggle="tab" href="#search-by-time">Search By Time</a></li>
