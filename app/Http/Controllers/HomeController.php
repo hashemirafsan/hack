@@ -27,9 +27,13 @@ class HomeController extends Controller
         $id = auth()->user()->id;
 
         $userLocation = User::with('location')->find($id);
+        $touristPlace = User::with('touristPlaces')->find($id);
+
+        return $touristPlace;
 
         return $userLocation;
 
         return view('home')->with('location', $userLocation);
     }
+
 }

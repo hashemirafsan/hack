@@ -32,4 +32,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(UserLocation::class);
     }
+
+    public function touristPlaces()
+    {
+        return $this->hasMany(TouristPlace::class);
+    }
 }
