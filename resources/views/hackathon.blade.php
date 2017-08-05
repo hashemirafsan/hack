@@ -22,13 +22,79 @@
 
 </head>
 <body>
-    <div>
+<div id="map"></div>
+    <script type="text/javascript">
+    already = 0;
+        function initMap() {
+  var pyrmont = new google.maps.LatLng(24.9045,91.8611);
+  var latLng = {
+    lat : 24.9045,
+    lng: 91.8611
+  }
 
-        <div id="app">
-            <router-view name="default"></router-view>
-        </div>
+  map = new google.maps.Map(document.getElementById('map'), {
+      center: pyrmont,
+      zoom: 15
+    });
 
-    </div>
-    <script src={{mix('js/hackathon.js')}} ></script>
+  var train_station_map = new google.maps.Map(document.getElementById('map'), {
+          center: latLng,
+          zoom: 14
+        });
+
+     var service = new google.maps.places.PlacesService(train_station_map);
+      service.nearbySearch({
+        location: latLng,
+        radius: 1000,
+        type: ['bus_station']
+      }, callback);
+
+    function callback(results, status) {
+        console.log(results);
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        for (var i = 0; i < results.length; i++) {
+          createMarker(results[i], train_station_map);
+        }
+        var distance =  new google.maps.DistanceMatrixService;
+         distance.getDistanceMatrix({
+          origins: [latLng],
+          destinations: train_station_stack,
+          travelMode: 'DRIVING',
+          unitSystem: google.maps.UnitSystem.METRIC,
+          avoidHighways: false,
+          avoidTolls: false
+        }, function(response, status) {
+            console.log('asasssas',response)
+          
+          console.log(already)
+          if(already <= 0) {
+            var elem = response.rows[0].elements;
+            var destinationsAdd = response.destinationAddresses
+            for(var i = 0; i < elem.length; i++ ) {
+               var new_string = '<li>' +destinationsAdd[i] + ' (' + elem[i].distance.text + ',' + elem[i].duration.text + ')' + '</li>' ;
+                $('#station_details').append(new_string)
+            }
+          } 
+        })
+      }
+    }
+
+    var train_station_stack = [];
+    function createMarker(place, map) {
+       var placeLoc = place.geometry.location;
+       var train_station_school_marker = new google.maps.Marker({
+          map: map,
+          position: place.geometry.location
+      });
+       var latLngs = place.geometry.location
+       var insertLanLng = {
+          lat: latLngs.lat(),
+          lng: latLngs.lng()
+       }
+       train_station_stack.push(insertLanLng)
+    }
+}
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWURC1EHNgmcSScwpIYdegYYcqoUKGDdo&libraries=places&callback=initMap"></script>
 </body>
 </html>

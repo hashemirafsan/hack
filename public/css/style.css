@@ -1,0 +1,163 @@
+body {
+	overflow-x: hidden;
+	font-family: 'Roboto', sans-serif;
+	font-size:16px;
+}
+
+.b {
+	color: black;
+}
+.card-block {
+	padding: 15px;
+	background: #efefef;
+	color:#a2a2a2;
+}
+
+p {
+	font-size: 16px;
+	font-weight: 300;
+	font-family:'Roboto', sans-serif;
+}
+.info {
+	color:black;
+	font-size:24px;
+	font-weight: 300;
+}
+
+.loca-info {
+	margin-top: 30px;
+}
+#map {
+	height: 400px;
+	width: 100%;
+}
+
+#map2 {
+	height: 400px;
+	width: 100%;
+}
+
+#hotel {
+	height: 400px;
+	width: 100%;
+}
+
+#current-location-map {
+  width:100%;
+  height: 400px;
+  background: gray;
+}
+.map-wrapper {
+	position: absolute;
+}
+
+
+/*hotel and restrurent collasps*/
+.faq {
+  padding: 10% 0px 3% 0px;
+}
+
+@media screen and (max-width: 480px) {
+  .faq {
+    padding: 13% 0px;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  .faq {
+    padding: 13% 0px;
+  }
+}
+
+.faq .part > .head {
+  padding: 4% 8.5%;
+  box-shadow: 0 0 5px 0 rgba(14, 15, 15, 0.1);
+  background: white;
+  font-size: 24px;
+  font-family: lato;
+  font-weight: 400;
+  color: #1a1a1a;
+  cursor: pointer;
+  margin: 1% 0px;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.faq .part > .head i.fa {
+  margin-right: 2%;
+}
+
+.faq .part > .head .description {
+  font-size: 18px;
+  font-family: lato;
+  font-weight: 300;
+  background: white;
+  color: #666;
+  padding-top: 3%;
+  text-align: justify;
+}
+
+@media screen and (max-width: 480px) {
+  .faq .part > .head .description {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  .faq .part > .head .description {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .faq .part .head {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  .faq .part .head {
+    font-size: 18px;
+  }
+}
+
+.faq .part .active {
+  margin: 3% 0px;
+  box-shadow: 0 0 50px 0 rgba(14, 15, 15, 0.1);
+}
+
+.app_img {
+  text-align: center;
+}
+
+.app_img img {
+  position: relative;
+  top: 242px;
+  left: 130px;
+  width: 50%;
+  display: inline-block;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@media screen and (max-width: 480px) {
+  .app_img {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  .app_img {
+    display: none;
+  }
+}
+
+.each_info {
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+    padding: 10px;
+    margin-bottom: 15px;
+}

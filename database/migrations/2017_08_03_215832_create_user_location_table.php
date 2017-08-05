@@ -15,6 +15,7 @@ class CreateUserLocationTable extends Migration
     {
         Schema::create('user_location', function (Blueprint $table) {
             
+            $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->decimal('home_lat', 10, 8)->nullable();
             $table->decimal('home_lng', 11, 8)->nullable();
